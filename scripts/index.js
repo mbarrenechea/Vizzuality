@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader';
 import App from './components/app';
-import './index.css';
+import './index.scss';
 
 const HotRootComponent = hot(module)(App);
 
