@@ -1,0 +1,42 @@
+@import '../../styles/colors';
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  .card {
+    position: relative;
+
+    &__image {
+      overflow: hidden;
+      height: 100%;
+      transition: opacity 0.2s ease-in;
+
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+
+      &--img {
+        min-height: 100%;
+      }
+    }
+
+    &__body {
+      padding: 10px 5px;
+      background-color: rgba($grey, 0.7);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      &--title {
+        text-transform: capitalize;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
