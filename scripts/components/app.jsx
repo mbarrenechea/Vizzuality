@@ -1,10 +1,11 @@
 import React from 'react';
+import GalleryContainer from '../containers/GalleryContainer';
 
 const App = () => (
   <main className="content">
     <div className="wrapper">
-      <div className="logo" />
-      <p>Hello World</p>
+      {/* <div className="logo" /> */}
+      <GalleryContainer />
     </div>
   </main>
 );
