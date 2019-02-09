@@ -1,9 +1,7 @@
-export default (state = {}, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case 'SET_IMAGES_COLLECTION':
-      return {
-        result: action.payload
-      };
+      return action.payload.results;
     default:
       return state;
   }

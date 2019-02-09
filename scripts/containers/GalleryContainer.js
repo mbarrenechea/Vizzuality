@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import imageCollection from '../actions/imagesCollection';
+import fetchImages from '../actions/imagesCollection';
 import Gallery from '../components/Gallery/Gallery';
+
+const mapStateToProps = ({ imagesCollection }) => ({
+  imagesCollection
+});
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      imageCollection
+      fetchImages
     },
     dispatch
   );
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Gallery);
