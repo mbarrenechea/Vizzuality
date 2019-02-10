@@ -10,21 +10,20 @@ class Gallery extends React.Component {
   }
 
   render() {
-    const { imagesCollection } = this.props;
+    const {
+      imagesCollection: { results }
+    } = this.props;
     return (
-      <>
-        <div className="gallery">
-          {imagesCollection.length > 0 &&
-            imagesCollection.map(img => <GalleryImage key={img.id} img={img} />)}
-        </div>
-      </>
+      <div className="gallery">
+        {results && results.map(img => <GalleryImage key={img.id} img={img} />)}
+      </div>
     );
   }
 }
 
 Gallery.propTypes = {
   fetchImages: PropTypes.func.isRequired,
-  imagesCollection: PropTypes.arrayOf(PropTypes.shape([])).isRequired
+  imagesCollection: PropTypes.shape({}).isRequired
 };
 
 export default Gallery;
