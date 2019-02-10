@@ -12,9 +12,12 @@ class Gallery extends React.Component {
   render() {
     const { imagesCollection } = this.props;
     return (
-      <div className="gallery">
-        {imagesCollection.length > 0 && imagesCollection.map(img => <GalleryImage img={img} />)}
-      </div>
+      <>
+        <div className="gallery">
+          {imagesCollection.length > 0 &&
+            imagesCollection.map(img => <GalleryImage key={img.id} img={img} />)}
+        </div>
+      </>
     );
   }
 }

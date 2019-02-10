@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const GalleryImage = ({ img }) => (
-  <div className="card" key={img.id}>
+  <div className="card">
     <div className="card__image">
       <img className="card__image--img" src={img.urls.small} alt={img.description} />
     </div>
