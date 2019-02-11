@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './galery.scss';
 import GalleryImage from './GalleryImage';
+import PaginationContainer from '../../containers/PaginationContainer';
 
 class Gallery extends React.Component {
   componentDidMount() {
@@ -14,9 +15,12 @@ class Gallery extends React.Component {
       imagesCollection: { results }
     } = this.props;
     return (
-      <div className="gallery">
-        {results && results.map(img => <GalleryImage key={img.id} img={img} />)}
-      </div>
+      <>
+        <div className="gallery">
+          {results && results.map(img => <GalleryImage key={img.id} img={img} />)}
+        </div>
+        {results && <PaginationContainer />}
+      </>
     );
   }
 }

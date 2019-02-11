@@ -6,8 +6,8 @@ const App = () => (
   <main className="content">
     <div className="wrapper">
       <div className="logo" />
-      <GalleryContainer />
       <LoadingSpinnerContainer />
+      <GalleryContainer />
     </div>
   </main>
 );
