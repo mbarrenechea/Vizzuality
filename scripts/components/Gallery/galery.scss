@@ -2,8 +2,16 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 20px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   .card {
     position: relative;
@@ -19,13 +27,13 @@
       }
 
       &--img {
-        min-height: 100%;
+        max-width: 100%;
       }
     }
 
     &__body {
       padding: 10px 5px;
-      background-color: rgba($grey, 0.7);
+      background-color: $blue;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -36,6 +44,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        color: $dark-grey;
       }
     }
   }
