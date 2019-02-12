@@ -19,7 +19,7 @@ const fetchImages = (page = 1) => dispatch => {
       dispatch(imagesCollection(imagesData));
       dispatch(loading(false));
     })
-    .catch(error => console.log('error fetching images', error));
+    .catch(error => console.log('error fetching images', error)); //eslint-disable-line
 };
 
 export default fetchImages;
