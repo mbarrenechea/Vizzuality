@@ -27,7 +27,11 @@ class Gallery extends React.Component {
 
 Gallery.propTypes = {
   fetchImages: PropTypes.func.isRequired,
-  imagesCollection: PropTypes.shape({}).isRequired
+  imagesCollection: PropTypes.shape({
+    total: PropTypes.number.isRequired,
+    total_pages: PropTypes.number.isRequired,
+    results: PropTypes.shape([].isRequired)
+  }).isRequired
 };
 
 export default Gallery;
