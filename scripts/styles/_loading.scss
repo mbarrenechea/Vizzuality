@@ -1,5 +1,13 @@
+@import './colors';
+
 .loading {
   background: url('/images/loading.svg') no-repeat;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  background-color: rgba($dark-grey, 0.7);
 }
