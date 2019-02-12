@@ -13,7 +13,9 @@ const GalleryImage = ({ img }) => (
         </picture>
       </div>
       <div className="card__body">
-        <div className="card__body--title">{img.description}</div>
+        <div className="card__body--title">
+          {img.description ? img.description : 'No description.'}
+        </div>
       </div>
     </a>
   </div>

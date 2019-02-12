@@ -30,7 +30,7 @@ Gallery.propTypes = {
   imagesCollection: PropTypes.shape({
     total: PropTypes.number.isRequired,
     total_pages: PropTypes.number.isRequired,
-    results: PropTypes.shape([].isRequired)
+    results: PropTypes.shape([]).isRequired
   }).isRequired
 };
 

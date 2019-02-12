@@ -1,0 +1,23 @@
+.sortby {
+  background: none;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  .sortby__icon {
+    display: inline-block;
+    display: none;
+
+    &--desc {
+      display: inline-block;
+    }
+
+    &--asc {
+      transform: rotate(180deg);
+      display: inline-block;
+    }
+  }
+}

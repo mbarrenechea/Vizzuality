@@ -1,6 +1,6 @@
 import loading from './loading';
 
-const imagesCollection = payload => ({
+export const imagesCollection = payload => ({
   type: 'SET_IMAGES_COLLECTION',
   payload
 });
