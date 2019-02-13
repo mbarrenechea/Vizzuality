@@ -18,7 +18,7 @@ class Pagination extends React.Component {
   };
 
   handlePagination = page => () => {
-    const { setCurrentPage, currentPage, total_pages, fetchImages } = this.props; //eslint-disable-line
+    const { setCurrentPage, currentPage, total_pages, fetchImages, setSortingOrder } = this.props; //eslint-disable-line
     const { currentPagesRange } = this.state;
     let nextPage = page;
 
@@ -44,6 +44,7 @@ class Pagination extends React.Component {
     if (nextPage >= 1 && nextPage < total_pages) {
       setCurrentPage(nextPage);
       fetchImages(nextPage);
+      setSortingOrder(null);
     }
   };
 
