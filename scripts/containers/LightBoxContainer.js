@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import fetchImages from '../actions/imagesCollection';
-import Gallery from '../components/Gallery/Gallery';
+import LightBox from '../components/LightBox/LightBox';
 import setLightboxImage from '../actions/LightBox';
 
 const mapStateToProps = ({ imagesCollection, lightboxImage }) => ({
@@ -12,7 +11,6 @@ const mapStateToProps = ({ imagesCollection, lightboxImage }) => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      fetchImages,
       setLightboxImage
     },
     dispatch
@@ -21,4 +19,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Gallery);
+)(LightBox);

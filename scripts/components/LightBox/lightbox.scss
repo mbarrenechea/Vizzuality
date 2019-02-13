@@ -1,0 +1,61 @@
+@import '../../styles/colors';
+
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    max-width: 1080px;
+    position: relative;
+
+    &--body {
+      width: calc(100% - 20px);
+      padding: 0px 10px;
+      background-color: $blue;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .lightbox__download-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+
+    > .lightbox__download-list--item {
+      margin-right: 10px;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .lightbox__button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: $blue;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './galery.scss';
 import GalleryImage from './GalleryImage';
 import PaginationContainer from '../../containers/PaginationContainer';
+import LightBoxContainer from '../../containers/LightBoxContainer';
 
 class Gallery extends React.Component {
   componentDidMount() {
@@ -12,14 +13,20 @@ class Gallery extends React.Component {
 
   render() {
     const {
-      imagesCollection: { results }
+      imagesCollection: { results },
+      setLightboxImage,
+      lightboxImage
     } = this.props;
     return (
       <>
         <div className="gallery">
-          {results && results.map(img => <GalleryImage key={img.id} img={img} />)}
+          {results &&
+            results.map(img => (
+              <GalleryImage setLightboxImage={setLightboxImage} key={img.id} img={img} />
+            ))}
         </div>
         {results && <PaginationContainer />}
+        {lightboxImage && <LightBoxContainer />}
       </>
     );
   }
@@ -27,6 +34,8 @@ class Gallery extends React.Component {
 
 Gallery.propTypes = {
   fetchImages: PropTypes.func.isRequired,
+  setLightboxImage: PropTypes.func.isRequired,
+  lightboxImage: PropTypes.string.isRequired,
   imagesCollection: PropTypes.shape({
     total: PropTypes.number.isRequired,
     total_pages: PropTypes.number.isRequired,
