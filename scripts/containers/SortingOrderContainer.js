@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { imagesCollection as setSortedImages } from '../actions/imagesCollection';
-import SortBy from '../components/SortBy/SortBy';
+import setSortingOrder from '../actions/sortingOrder';
+import SortingOrder from '../components/SortingOrder/SortingOrder';
 
-const mapStateToProps = ({ imagesCollection }) => ({
-  imagesCollection
+const mapStateToProps = ({ imagesCollection, sortingOrder }) => ({
+  imagesCollection,
+  sortingOrder
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      setSortedImages
+      setSortedImages,
+      setSortingOrder
     },
     dispatch
   );
@@ -18,4 +21,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SortBy);
+)(SortingOrder);

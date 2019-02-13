@@ -40,9 +40,8 @@ class Pagination extends React.Component {
         }));
       }
     }
-
+    // eslint-disable-next-line
     if (nextPage >= 1 && nextPage < total_pages) {
-      //eslint-disable-line
       setCurrentPage(nextPage);
       fetchImages(nextPage);
     }
