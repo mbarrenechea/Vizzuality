@@ -2,20 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class GalleryImage extends React.Component {
-  handleClick = event => {
-    const { setLightboxImage } = this.props;
-    setLightboxImage(event.target.dataset.img);
-  };
-
   render() {
-    const { img } = this.props;
+    const { img, setLightboxImage } = this.props;
+
     return (
       <div className="card">
         <button
           type="button"
           className="card__button"
           data-img={img.id}
-          onClick={event => this.handleClick(event)}
+          onClick={() => {
+            setLightboxImage(img.id);
+          }}
         >
           <div className="card__image">
             <picture>
